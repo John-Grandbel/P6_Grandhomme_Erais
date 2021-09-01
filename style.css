@@ -1,3 +1,4 @@
+
 #myBooks
 
 h1{
@@ -43,7 +44,7 @@ h2 {
   text-align: center;
   text-decoration: none;
   border-radius: 6px;
-  border: 1px solid transparent;
+  border: 1.5px solid #0c790c;
   color: white;
   width: 200px;
   height: 40px;
@@ -51,11 +52,9 @@ h2 {
   font-size: 15px;
   font-family: 'STIX Two Text', serif;
   font-weight: normal;
-  background-color: #459c23;
+  background-color: #0c1db6;
   justify-content: center;
-  display: flex;
-  cursor: pointer;
-}
+  display: flex;}
 /* rendre transparant au passage de la souris          */
 .addButton:hover {
   opacity: 0.9;
@@ -78,12 +77,11 @@ h2 {
   font-size: 15px;
   font-family: 'STIX Two Text', serif;
   font-weight: normal;
-  background-color: #07a04c;
+  background-color: #32a305;
   justify-content: center;
   display: flex;
   margin-right: 100%;
-  cursor: pointer;
-}
+  cursor: pointer;}
 
 .searchButton:hover {
   opacity: 0.9;
@@ -105,12 +103,13 @@ h2 {
   font-size: 15px;
   font-family: 'STIX Two Text', serif;
   font-weight: normal;
-  background-color: #aa2605;
+  background-color: #ec0505;
   justify-content: center;
   display: flex;
   margin-right: 100%;
-  cursor: pointer;
-}
+  cursor: pointer;}
+
+  
 .cancelButton:hover {
   opacity: 0.9;
 }
