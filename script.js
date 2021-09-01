@@ -1,5 +1,5 @@
-let nouveauLivre = document.querySelector(".h2");
-let PageTitle = document.querySelector(".h1");
+let newSearch = document.querySelector(".h2");
+let pageTitle = document.querySelector(".h1");
 const contentBook = document.getElementById("content");
 const container = document.getElementById("myBooks");
 const maPochListe = document.getElementById("poch-list");
@@ -12,20 +12,19 @@ function addBookButton() {
     </div>`;
 
   container.appendChild(addButton);
-  nouveauLivre.after(addButton);
+  newSearch.after(addButton);
   }
   
 
 
-  function cancelSearch() {
-    const addBookDiv = document.querySelector(".addBook");
-    addBookDiv.innerHTML = `
-    <button type="button" onclick="addSearchForm()" id="addButton" class="addButton">Ajouter un livre</button>`;
+function cancelSearch() {
+  const addBookDiv = document.querySelector(".addBook");
+  addBookDiv.innerHTML = `
+  <button type="button" onclick="addSearchForm()" id="addButton" class="addButton">Ajouter un livre</button>`;
+
   
-    
-  }
-  addBookButton();
-  
+}
+addBookButton();
 
 function createAllEventListner() {
 
@@ -36,12 +35,13 @@ function createAllEventListner() {
   })
   document.getElementById('cancelButton').addEventListener('click', function() {
       cancelSearch();
-      
+      // affichage de la pochlist
   })
 
 }
 
-// formulaire de recherche
+
+// ajouter formulaire de recherche
 function addSearchForm() {
   const addBookDiv = document.querySelector(".addBook");
   addBookDiv.innerHTML = `
@@ -65,9 +65,12 @@ function addSearchForm() {
     </div>
   </form>`;
   createAllEventListner();
+  
 }
 
-
+let buttonBook =document.getElementsByClassName('faClickable');
+let bookSection = document.getElementsByClassName('bookResult');
+bookSelect (contentDiv, buttonBook, bookSection, value);  //Ajout ou suppression d'un livre à la Poch'liste
 function searchBook() {
 
     var url = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -142,10 +145,12 @@ function searchBook() {
         card.appendChild(descriptionBookCard);
         card.appendChild(imgCard);
 
+        
 
+      
 
-       
       });
+      //création page des résultats
       const titlePochList = document.createElement('h2');
       titlePochList.id = 'titlePochList';
       titlePochList.className = 'h2';
@@ -153,7 +158,7 @@ function searchBook() {
       const cardWrapper = document.createElement('div');
       cardWrapper.appendChild(titlePochList);
       cardWrapper.appendChild(cardContainer);
-      const content = document.getElementById("content");
+      const content = document.getElementById("content");//sert à rien
       content.insertBefore(cardWrapper, content.childNodes[0]);
     });
 
