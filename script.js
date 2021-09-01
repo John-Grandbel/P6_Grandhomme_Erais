@@ -17,18 +17,15 @@ function addBookButton() {
   
 
 
-function cancelSearch() {
-  const addBookDiv = document.querySelector(".addBook");
-  addBookDiv.innerHTML = `
-  <button type="button" id="addButton" class="addButton">Ajouter un livre</button>`;
-  document.getElementById('addButton').addEventListener('click', function() {
-    searchBook();
-    loadPochList();
+  function cancelSearch() {
+    const addBookDiv = document.querySelector(".addBook");
+    addBookDiv.innerHTML = `
+    <button type="button" onclick="addSearchForm()" id="addButton" class="addButton">Ajouter un livre</button>`;
+  
     
-  })
-
-}
-addBookButton();
+  }
+  addBookButton();
+  
 
 function createAllEventListner() {
 
