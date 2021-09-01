@@ -1,0 +1,62 @@
+#myBooks
+
+h1{
+    
+background-color: #eff0f4;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 2rem;
+  color: #777;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem grey;
+    text-align: center;
+    font-size: 50px;
+}
+
+h2{
+ 
+    font-size: 50px;
+	
+	text-align: center;
+    
+    
+}
+
+
+
+#content
+
+h2 {
+	
+    font-size: 50px;
+	
+	text-align: center;
+}
+
+
+/* bouton ajouter un livre   */
+.addButton {
+  display: inline-block;
+  padding: 10px 24px;
+  outline: none;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: white;
+  width: 200px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 15px;
+  font-family: 'STIX Two Text', serif;
+  font-weight: normal;
+  background-color: #3c861f;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+/* rendre transparant au passage de la souris          */
+.addButton:hover {
+  opacity: 0.9;
+}
