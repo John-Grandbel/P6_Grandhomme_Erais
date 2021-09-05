@@ -1,12 +1,17 @@
-let newSearch = document.querySelector(".h2");
+ 
+let newSearch = document.querySelector(".h2"); 
 let pageTitle = document.querySelector(".h1");
 const contentBook = document.getElementById("content");
 const container = document.getElementById("myBooks");
 const maPochListe = document.getElementById("poch-list");
 
-// fonction du bouton "ajouter un livre"
+
+
+//fonction bouton "ajouter un livre"
 function addBookButton() {
+ 
   let addButton = document.createElement("div");
+  
   addButton.innerHTML = `<div class="addBook">
       <button onclick="addSearchForm()" type="button" class="addButton"> Ajouter un livre </button>
     </div>`;
@@ -26,9 +31,10 @@ function cancelSearch() {
 }
 addBookButton();
 
-function createAllEventListner() {
 
-  
+function createAllEventListener() {
+
+
   document.getElementById('searchButton').addEventListener('click', function() {
     searchBook();
      
@@ -64,13 +70,13 @@ function addSearchForm() {
       </div><br>
     </div>
   </form>`;
-  createAllEventListner();
+  createAllEventListener();
   
 }
 
 let buttonBook =document.getElementsByClassName('faClickable');
 let bookSection = document.getElementsByClassName('bookResult');
-bookSelect (contentDiv, buttonBook, bookSection, value);  //Ajout ou suppression d'un livre à la Poch'liste
+bookSelect (contentDiv, buttonBook, bookSection, value);  
 function searchBook() {
 
     var url = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -118,8 +124,7 @@ function searchBook() {
           descriptionBookCard.innerText = descriptionBookCard.innerText.substring(0, 200) + '...';
         }
         const bookMarks = document.createElement('i');
-        bookMarks.className = 'fas fa-bookmark';
-
+      
         const headerCard = document.createElement('div');
         headerCard.className = 'card-header';
         headerCard.appendChild(titleBookCard);
@@ -135,8 +140,7 @@ function searchBook() {
           imgCard.src = book.volumeInfo.imageLinks.thumbnail;
         }
 
-        const deleteCard = document.createElement('i');
-        deleteCard.className = 'fas fa-trash-alt';
+
 
         cardContainer.appendChild(card);
         card.appendChild(headerCard);
@@ -158,7 +162,6 @@ function searchBook() {
       const cardWrapper = document.createElement('div');
       cardWrapper.appendChild(titlePochList);
       cardWrapper.appendChild(cardContainer);
-      const content = document.getElementById("content");//sert à rien
       content.insertBefore(cardWrapper, content.childNodes[0]);
     });
 
