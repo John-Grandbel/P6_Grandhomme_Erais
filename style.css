@@ -4,11 +4,14 @@
   display: block;
 }
 
+
 .form-group .form-control {
   width: 99.2%;
   height: 30px;
   display: flex;
 }
+
+
 
 /* bouton ajouter un livre   */
 .addButton {
@@ -105,7 +108,12 @@
   padding: 20px;
 }
 
-
+.fa-bookmark {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: green;
+}
 
 
 
@@ -115,7 +123,12 @@
   align-self: center;
   justify-content: space-between;
 }
-
+.card-container .fa-trash-alt {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: red;
+}
 .card-container .card-title {
   display: flex;
 }
@@ -131,7 +144,9 @@
 .card-container .card-img {
   display: block;
   margin: auto;
-  height: 40vh;
+  height: auto;
+  max-width: 30%;
+  
 }
 
 body {
@@ -145,18 +160,16 @@ body {
   /* Ma poch'liste */
 
 body #myBooks h1 {
-  padding-top: 1%;
+padding-top: 1%;
   text-align: center;
-  border: 3px #eeeded;
   height: 40px;
-  line-height: 30px;
   font-weight: normal;
   font-family: "Source Code Pro", monospace;
   background-color: #eff0f4;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 body #myBooks hr {
-  border-top: none;
+  border-top: none; /*fait disparaitre la ligne de séparation entre h1 et h2 */
   margin-top: 2%;
   margin-bottom: -1%;
 }
@@ -179,7 +192,10 @@ body #myBooks #content {
   flex-direction: column;
   align-items: center;
 }
-
+body #myBooks .error {
+  text-align: center;
+  color: red;
+}
 body .card-header {
   display: flex;
   align-items: center;

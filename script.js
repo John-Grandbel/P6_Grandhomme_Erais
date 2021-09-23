@@ -1,4 +1,3 @@
- 
 let newSearch = document.querySelector(".h2"); 
 let pageTitle = document.querySelector(".h1");
 const contentBook = document.getElementById("content");
@@ -18,15 +17,17 @@ function addBookButton() {
 
   container.appendChild(addButton);
   newSearch.after(addButton);
+ 
   }
   
 
 
 function cancelSearch() {
-  const addBookDiv = document.querySelector(".addBook");
+  const addBookDiv = document.querySelector(".cancelButton");
   addBookDiv.innerHTML = `
-  <button type="button" onclick="addSearchForm()" id="addButton" class="addButton">Ajouter un livre</button>`;
-
+  <button type="button" onclick="addSearchForm()" id="cancelButton" class="cancelButton"</button>`;
+  newSearch.after(cancelButton);
+  window.location.reload(false)
   
 }
 addBookButton();
@@ -34,7 +35,7 @@ addBookButton();
 
 function createAllEventListener() {
 
-
+//le bouton rechercher est relié à la fonction searchbook et le bouton annulé relié à la fonction cancelsearch
   document.getElementById('searchButton').addEventListener('click', function() {
     searchBook();
      
@@ -74,9 +75,13 @@ function addSearchForm() {
   
 }
 
-let buttonBook =document.getElementsByClassName('faClickable');
-let bookSection = document.getElementsByClassName('bookResult');
-bookSelect (contentDiv, buttonBook, bookSection, value);  
+function clearResults(){
+
+  $("#shower").children().remove();
+
+}
+
+ 
 function searchBook() {
 
     var url = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -86,13 +91,18 @@ function searchBook() {
     var author= document.getElementById('author').value;
     console.log(author);
     url=url+author;
+    
 
   fetch(url)
     .then((res) => res.json())
     .then((results) => {
+      const container  = document.getElementById('card-container');
+      if (container) {
+        container.parentElement.removeChild(container);
+      }
       const cardContainer = document.createElement('div');
       cardContainer.className = 'card-container';
-
+      cardContainer.id = 'card-container';
       const search = results.items;
       search.map((book) => {
       
@@ -138,7 +148,11 @@ function searchBook() {
           imgCard.src = 'logos/unavailable.png';
         } else {
           imgCard.src = book.volumeInfo.imageLinks.thumbnail;
+
+          
         }
+
+        
 
 
 
@@ -166,3 +180,4 @@ function searchBook() {
     });
 
 }
+
