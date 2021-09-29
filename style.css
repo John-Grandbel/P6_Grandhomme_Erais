@@ -201,3 +201,19 @@ body .card-header {
   justify-content: space-between;
   height: 40px;
 }
+
+/*sessionstorage */
+
+.fa-bookmark {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: green;
+}
+
+.card-container .fa-trash-alt {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: red;
+}

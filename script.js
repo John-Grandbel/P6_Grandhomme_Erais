@@ -102,7 +102,12 @@ function searchBook() {
     var author= document.getElementById('author').value;
     console.log(author);
     url=url+author;
-    
+    //si pas de titre ou auteur afficher l'alert
+    if (!title || !author) {
+      alert('Veuiller préciser titre et auteur');
+      return;
+
+    }
 
   fetch(url)
     .then((res) => res.json())
@@ -153,9 +158,10 @@ function searchBook() {
 
         const addBookmarkButton = document.createElement('button');
         addBookmarkButton.innerHTML = 'Ajouter à ma pochliste';
+        addBookmarkButton.style.backgroundColor ="#00FF00";
+        addBookmarkButton.style. color =  "#000000" ;
         addBookmarkButton.onclick = function() {
-          addBookToPochList(book, true);
-        }
+          addBookToPochList(book, true);}
 
         headerCard.appendChild(addBookmarkButton);
 
@@ -170,7 +176,7 @@ function searchBook() {
           
         }
 
-        
+  
 
 
 
@@ -199,13 +205,21 @@ function searchBook() {
 
 }
 
-
+//fonction d'ajout de livre dans la pochlist
 function addBookToPochList(book, bookToAdd) {
   const books = JSON.parse(sessionStorage.getItem('myPochList'));
+  const found = books.find(e => e.id==book.id);
+ 
+  if (found){
+  
+    alert('ce livre existe déjà dans votre pochlist');
+    return;
+}
 
   if(bookToAdd){
     books.push(book);
     sessionStorage.setItem('myPochList', JSON.stringify(books));
+    
   }
 
   const pochList = document.getElementById('poch-container');
@@ -243,6 +257,8 @@ function addBookToPochList(book, bookToAdd) {
 
   const removeButton = document.createElement('button');
   removeButton.innerHTML = 'Supprimer';
+  removeButton.style.backgroundColor ="#FF0000";
+  removeButton.style. color =  "#000000" ;
   removeButton.onclick = function() {
     const cardToDelete = document.getElementById('poch-'+book.id);
     cardToDelete.parentElement.removeChild(cardToDelete);
