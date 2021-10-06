@@ -159,7 +159,9 @@ function searchBook() {
         const addBookmarkButton = document.createElement('button');
         addBookmarkButton.innerHTML = 'Ajouter à ma pochliste';
         addBookmarkButton.style.backgroundColor ="#00FF00";
-        addBookmarkButton.style. color =  "#000000" ;
+        addBookmarkButton.style.color =  "#000000" ;
+        addBookmarkButton.style.right = "10px";
+        addBookmarkButton.style.boxSizing = "box-sizing: content-box"
         addBookmarkButton.onclick = function() {
           addBookToPochList(book, true);}
 
@@ -175,6 +177,8 @@ function searchBook() {
 
           
         }
+
+      
 
   
 
@@ -210,7 +214,7 @@ function addBookToPochList(book, bookToAdd) {
   const books = JSON.parse(sessionStorage.getItem('myPochList'));
   const found = books.find(e => e.id==book.id);
  
-  if (found){
+  if (found && bookToAdd ){
   
     alert('ce livre existe déjà dans votre pochlist');
     return;
