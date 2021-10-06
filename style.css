@@ -10,6 +10,39 @@
   display: flex;
 }
 
+body {
+  margin: 0;
+  padding: 20px;
+  
+}
+
+ /*Page d'accueil:  */
+
+
+/* Poch'Lib */
+body #myBooks h1 {
+  padding-top: 1%;
+  text-align: center;
+  border: 3px #eeeded;
+  height: 40px;
+  line-height: 30px;
+  font-weight: normal;
+  font-family: "Source Code Pro", monospace;
+  background-color: #eff0f4;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Séparateur */
+body #myBooks hr {background-color:black; border:none; height:1px; margin-top: 2%; margin-bottom: -1%;}
+ 
+
+/*nouveau livre*/
+body #myBooks .h2 {
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+ 
+}
+
 /* bouton ajouter un livre   */
 .addButton {
   display: inline-block;
@@ -36,6 +69,20 @@
 .addButton:hover {
   opacity: 0.9;
 }
+
+
+  /*ma poch'liste*/
+  #content .h3 {
+    
+    text-align: center;
+    font-family: "Source Code Pro", monospace;
+    font-weight: bolder;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  
+  
+    }
+
 
 /*bouton rechercher*/
 .searchButton {
@@ -91,10 +138,7 @@
   opacity: 0.9;
 }
 
-/*titre du livre  */
-#titlePochList.h2 {
-  text-align: center;
-}
+
 
 /*données du livre */
 .card {
@@ -105,35 +149,29 @@
   padding: 20px;
 }
 
-.fa-bookmark {
-  display: flex;
-  margin-bottom: 10px;
-  float: right;
-  color: green;
-}
-
-
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
   justify-content: space-between;
 }
-.card-container .fa-trash-alt {
-  display: flex;
-  margin-bottom: 10px;
-  float: right;
-  color: red;
-}
+
 .card-container .card-title {
-  display: flex;
+  display: block;
+  margin-block-start: 3em;
+  margin-block-end: 1.33em;
+  font-weight: bold;
+
 }
+
 .card-container .card-id {
   display: flex;
 }
+
+
 .card-container .card-author {
   display: flex;
+  margin: auto;
 }
 .card-container .card-description {
   display: flex;
@@ -146,74 +184,21 @@
   
 }
 
-body {
-  margin: auto;
-  padding: 20px;
-}
-  /*Plan page d'accueil  */
-  /* Poch'Lib */
-  /* Séparateur */
-  /* Nouveau livre */
-  /* Ma poch'liste */
 
-body #myBooks h1 {
-  padding-top: 1%;
-  text-align: center;
-  border: 3px #eeeded;
-  height: 40px;
-  line-height: 30px;
-  font-weight: normal;
-  font-family: "Source Code Pro", monospace;
-  background-color: #eff0f4;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-}
-body #myBooks hr {
-  border-top: none;
-  margin-top: 2%;
-  margin-bottom: -1%;
-}
-body #myBooks .h2 {
-  text-align: center;
-  font-family: "Source Code Pro", monospace;
-  font-weight: bolder;
-  margin-top: 1%;
-  margin-bottom: 1%;
-}
-body #myBooks #titlePochList.h2 {
-  text-align: center;
-  font-family: "Source Code Pro", monospace;
-  font-weight: bolder;
-  margin-top: 2%;
-}
-body #myBooks #content {
-  font-family: "Source Code Pro", monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-body #myBooks .error {
-  text-align: center;
-  color: red;
-}
-body .card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
-}
-
-/*sessionstorage */
-
-.fa-bookmark {
-  display: flex;
-  margin-bottom: 10px;
+.addBookmarkButton{
+  background-color: #61e708;
   float: right;
-  color: green;
+  width: 70px;
+  height: 28px;
+  font-size: 10px;
 }
 
-.card-container .fa-trash-alt {
-  display: flex;
-  margin-bottom: 10px;
-  float: right;
-  color: red;
+.removeButton{
+background-color:#FF0000 ;
+float: right;
+color:#000000 ;
+width: 70px;
+height: 28px;
+font-size: 10px;
+
 }

@@ -59,7 +59,7 @@ function createAllEventListener() {
 }
 
 
-// ajouter formulaire de recherche
+// mise en page 
 function addSearchForm() {
   const addBookDiv = document.querySelector(".addBook");
   addBookDiv.innerHTML = `
@@ -156,16 +156,17 @@ function searchBook() {
         headerCard.appendChild(titleBookCard);
         headerCard.appendChild(bookMarks);
 
-        const addBookmarkButton = document.createElement('button');
-        addBookmarkButton.innerHTML = 'Ajouter à ma pochliste';
-        addBookmarkButton.style.backgroundColor ="#00FF00";
-        addBookmarkButton.style.color =  "#000000" ;
-        addBookmarkButton.style.right = "10px";
-        addBookmarkButton.style.boxSizing = "box-sizing: content-box"
+        const addBookmarkButton = document.createElement('div');
+        addBookmarkButton.innerHTML = `
+        <button type="button" id="addBookmarkButton" class="addBookmarkButton"> Ajouter </button>`;
+        
+  
+      
+      
         addBookmarkButton.onclick = function() {
           addBookToPochList(book, true);}
 
-        headerCard.appendChild(addBookmarkButton);
+        card.appendChild(addBookmarkButton);
 
         const imgCard = document.createElement('img');
         imgCard.className = 'card-img';
@@ -201,6 +202,7 @@ function searchBook() {
       titlePochList.id = 'titlePochList';
       titlePochList.className = 'h2';
       titlePochList.innerHTML = "Résultats de la recherche";
+      titlePochList.style.marginTop = "40px";
       const cardWrapper = document.createElement('div');
       cardWrapper.appendChild(titlePochList);
       cardWrapper.appendChild(cardContainer);
@@ -259,10 +261,12 @@ function addBookToPochList(book, bookToAdd) {
   headerCard.className = 'card-header';
   headerCard.appendChild(titleBookCard);
 
-  const removeButton = document.createElement('button');
-  removeButton.innerHTML = 'Supprimer';
-  removeButton.style.backgroundColor ="#FF0000";
-  removeButton.style. color =  "#000000" ;
+
+
+  const removeButton = document.createElement('div');
+  removeButton.innerHTML = `
+  <button type="button" id="removeButton" class="removeButton"> Supprimer </button>`;
+
   removeButton.onclick = function() {
     const cardToDelete = document.getElementById('poch-'+book.id);
     cardToDelete.parentElement.removeChild(cardToDelete);
@@ -272,7 +276,7 @@ function addBookToPochList(book, bookToAdd) {
     sessionStorage.setItem('myPochList', JSON.stringify(books));
   }
 
-  headerCard.appendChild(removeButton);
+  card.appendChild(removeButton);
 
   const imgCard = document.createElement('img');
   imgCard.className = 'card-img';
