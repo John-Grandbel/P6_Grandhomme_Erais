@@ -5,7 +5,8 @@ Poch'lib is a book management application ordered by "La plume enchantée"
 
 Mobile | Tablet | Desktop.   
 
-In this website you can searching a book with autor's name and title's book through Google Books API and deleting your search.
+On this website, you can search for a book with the author's name and the title of the book through the Google Books API. Once the search has started, 
+you can add books to your "Poch'list" or delete them using the buttons to the right of each card. You can also cancel your search and return to the Home screen.
 
 Instructions for installing the project:
 
